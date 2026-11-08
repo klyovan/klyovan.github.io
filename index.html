@@ -750,14 +750,6 @@
     function close() { panel.classList.remove("open"); panel.setAttribute("aria-hidden", "true"); }
     document.getElementById("spClose").addEventListener("click", close);
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
-
-    // 8 quick taps on "hi" (each tap within 0.8 s of the previous one)
-    var hi = document.getElementById("secretHi"), taps = 0, timer;
-    hi.addEventListener("click", function () {
-      taps++; clearTimeout(timer);
-      timer = setTimeout(function () { taps = 0; }, 800);
-      if (taps >= 8) { taps = 0; open(); }
-    });
   })();
 </script>
 </body>
